@@ -1,18 +1,19 @@
 package oauth2.multitenant.sboot.securitypanel.security.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jdk.nashorn.internal.objects.annotations.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.lang.NonNull;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import sun.awt.geom.AreaOp;
 
-import javax.management.relation.Role;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 
 @Table(name = "user")
 @Entity
-public class User {
+public class User implements UserDetails{
 
     private static final long serialVersionUID = 1L;
 
@@ -45,15 +46,48 @@ public class User {
     @NotNull
     private boolean enabled;
 
+    @Override
+    @JsonIgnore
+    @NotNull
+    public boolean isAccountNonExpired() {
+        return !isAccountExpired();
+    }
+
+    @Override
+    @JsonIgnore
+    @NotNull
+    public boolean isAccountNonLocked() {
+        return !isAccountLocked();
+    }
+
+    @Override
+    @JsonIgnore
+    @NotNull
+    public boolean isCredentialsNonExpired() {
+        return !isCredentialsExpired();
+    }
+
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles;
+    }
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "users_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     @OrderBy
     @JsonFormat
-    private Collection<Role> roles;
+    private Collection<Authority> roles;
 
-    public User() {
-    }
+    /*
+    //Empty Constructor
+    */
 
+    public User() {}
+
+    /*
+    Getter and Setter
+     */
 
     public Long getId() {
         return id;
@@ -71,6 +105,8 @@ public class User {
     public void setUsername(@NonNull String username) {
         this.username = username;
     }
+
+
 
     public String getPassword() {
         return password;
@@ -112,12 +148,12 @@ public class User {
         this.enabled = enabled;
     }
 
-    public Collection<Role> getAuthorities() {
-        return authorities;
+    public Collection<Authority> getRoles() {
+        return roles;
     }
 
-    public void setAuthorities(Collection<Role> authorities) {
-        this.authorities = authorities;
+    public void setRoles(Collection<Authority> roles) {
+        this.roles = roles;
     }
 }
 
