@@ -1,1 +1,3 @@
 INSERT INTO user (`account_expired`, `account_locked`, `credentials_expired`, `enabled`, `password`, `username`) VALUES (false, false, false, true, '$2b$10$kCvlAbJ6LwcYmCJ28j0ktOZQNEo/b/FNgS7vdtIgfungShuWmXoru', 'admin');
+INSERT INTO role ('name') VALUES ('admin');
+INSERT INTO users_role ('user_id', 'role_id') VALUES ('1', '1')
