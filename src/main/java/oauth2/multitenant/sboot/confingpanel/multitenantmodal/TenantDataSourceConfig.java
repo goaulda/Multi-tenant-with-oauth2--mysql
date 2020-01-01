@@ -1,4 +1,4 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal.datasourceconfig;
+package oauth2.multitenant.sboot.confingpanel.multitenantmodal;
 
 import oauth2.multitenant.sboot.confingpanel.multitenantmodal.datasourceconfig.model.DataSourceTenantConfig;
 import oauth2.multitenant.sboot.confingpanel.multitenantmodal.datasourceconfig.repo.DataSourceTenantConfigRepo;
@@ -44,7 +44,7 @@ public class TenantDataSourceConfig implements Serializable {
     }
 
     private DataSource createDataSource(String name) {
-        DataSourceTenantConfig config = configRepo.findByName(name);
+        DataSourceTenantConfig config = configRepo.findByNameTenant(name);
         if (config != null) {
             DataSourceBuilder factory = DataSourceBuilder
                     .create().driverClassName(config.getDriver())

@@ -1,10 +1,10 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal.model;
+package oauth2.multitenant.sboot.confingpanel.multitenantmodal.datasourceconfig.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "DataSourceConfig")
+@Table(name = "data_source_config")
 public class DataSourceTenantConfig implements Serializable {
 
     @Id

@@ -1,0 +1,1 @@
+create table customer_info (id bigint, name varchar(255), street varchar(255), zipcode varchar(10), city varchar(255), nip varchar(255), regon varchar(255))
