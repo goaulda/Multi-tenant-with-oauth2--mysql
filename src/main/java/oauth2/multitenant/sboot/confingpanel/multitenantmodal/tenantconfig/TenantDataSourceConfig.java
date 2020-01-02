@@ -1,4 +1,4 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal;
+package oauth2.multitenant.sboot.confingpanel.multitenantmodal.tenantconfig;
 
 import oauth2.multitenant.sboot.confingpanel.multitenantmodal.datasourceconfig.model.DataSourceTenantConfig;
 import oauth2.multitenant.sboot.confingpanel.multitenantmodal.datasourceconfig.repo.DataSourceTenantConfigRepo;

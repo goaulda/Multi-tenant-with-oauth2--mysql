@@ -1,4 +1,4 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal;
+package oauth2.multitenant.sboot.confingpanel.multitenantmodal.tenantconfig;
 
 public class TenantContext {
 

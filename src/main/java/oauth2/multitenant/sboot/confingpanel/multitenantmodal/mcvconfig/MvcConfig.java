@@ -1,5 +1,6 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal;
+package oauth2.multitenant.sboot.confingpanel.multitenantmodal.mcvconfig;
 
+import oauth2.multitenant.sboot.confingpanel.multitenantmodal.interceptor.RequestInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

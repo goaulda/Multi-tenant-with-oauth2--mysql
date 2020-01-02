@@ -1,4 +1,4 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal.exception.model;
+package oauth2.multitenant.sboot.confingpanel.exceptionmodal.localexception.exception.model;
 
 
 import java.util.Date;
@@ -14,6 +14,9 @@ public class ExceptionModel {
         this.status = status;
         this.message = message;
         this.date = date;
+    }
+
+    public ExceptionModel() {
     }
 
     public int getStatus() {

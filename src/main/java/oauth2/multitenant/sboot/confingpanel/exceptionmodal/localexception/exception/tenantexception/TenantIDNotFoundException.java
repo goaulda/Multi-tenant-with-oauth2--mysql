@@ -1,4 +1,4 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal.exception.tenantexception;
+package oauth2.multitenant.sboot.confingpanel.exceptionmodal.localexception.exception.tenantexception;
 
 public class TenantIDNotFoundException extends RuntimeException {
 

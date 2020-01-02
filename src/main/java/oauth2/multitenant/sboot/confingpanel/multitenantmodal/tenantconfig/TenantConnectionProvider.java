@@ -1,4 +1,4 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal;
+package oauth2.multitenant.sboot.confingpanel.multitenantmodal.tenantconfig;
 
 import org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider;
 import org.springframework.beans.factory.annotation.Value;

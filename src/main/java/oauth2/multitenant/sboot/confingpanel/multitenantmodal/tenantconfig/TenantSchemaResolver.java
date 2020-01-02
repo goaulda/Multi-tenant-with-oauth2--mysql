@@ -1,4 +1,4 @@
-package oauth2.multitenant.sboot.confingpanel.multitenantmodal;
+package oauth2.multitenant.sboot.confingpanel.multitenantmodal.tenantconfig;
 
 import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
 import org.springframework.beans.factory.annotation.Value;
